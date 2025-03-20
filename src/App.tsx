@@ -1,10 +1,15 @@
+import { LanguageContextProvider } from './context/LanguageContext'
+import { Page } from './components/Page'
+import { ThemeContextProvider } from './context/ThemeContext'
+
 function App() {
-  const aa = 'asdf'
-  console.log(aa, 'asfd')
   return (
     <>
-      <p className='bg-white'>Holaa</p>
-      <p className='bg-white'>Holaa</p>
+      <LanguageContextProvider>
+        <ThemeContextProvider>
+          <Page/>
+        </ThemeContextProvider>
+      </LanguageContextProvider>
     </>
   )
 }
