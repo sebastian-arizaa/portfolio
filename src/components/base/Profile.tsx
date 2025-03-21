@@ -10,28 +10,29 @@ import { FaCity } from 'react-icons/fa';
 export function Profile() {
   const {language} = useContext(LanguageContext)
   const {setPage} = useContext(PageContext)
-  const [anchorSelected, setAnchorSelected] = useState('')
+  const [anchorProjectIsSelected, setAnchorProjectIsSelect] = useState(false)
+  const [anchorSkillIsSelected, setAnchorSkillIsSelect] = useState(false)
+  const [anchorAboutMeIsSelected, setAnchorAboutMeIsSelect] = useState(false)
 
   const handleAnchorSelected = (value?: string) => {
     if(!setPage) return 
+    setAnchorProjectIsSelect(false)
+    setAnchorSkillIsSelect(false)
+    setAnchorAboutMeIsSelect(false)
     if(text[language].anchorProjects == value) {
       setPage('projects')
-      setAnchorSelected(value)
+      setAnchorProjectIsSelect(true)
     }
     if(text[language].anchorSkills == value) {
       setPage('skills')
-      setAnchorSelected(value)
+      setAnchorSkillIsSelect(true)
     }
     if(text[language].anchorAboutMe == value) {
       setPage('about me')
-      setAnchorSelected(value)
+      setAnchorAboutMeIsSelect(true)
     }
   }
 
-  const isAnchorActive = (value: string) => {
-    if(value == anchorSelected) return true
-    return false
-  }
   const bannerImage = 'https://www.armadilloamarillo.com/wp-content/uploads/fondo-de-programacion-web_ok.jpg'
   // const bannerImage = '../../assets/profileBanner.jpg'
   const putBanner = false
@@ -56,17 +57,17 @@ export function Profile() {
         <div className='flex'>
           <Anchor 
             onClick={handleAnchorSelected} 
-            isActive={isAnchorActive(text[language].anchorProjects)} 
+            isActive={anchorProjectIsSelected} 
             content={text[language].anchorProjects}
           />
           <Anchor 
             onClick={handleAnchorSelected} 
-            isActive={isAnchorActive(text[language].anchorSkills)} 
+            isActive={anchorSkillIsSelected} 
             content={text[language].anchorSkills}
           />
           <Anchor 
            onClick={handleAnchorSelected} 
-           isActive={isAnchorActive(text[language].anchorAboutMe)} 
+           isActive={anchorAboutMeIsSelected} 
            content={text[language].anchorAboutMe}
           />
         </div>
@@ -80,7 +81,7 @@ const text = {
     profilePhotoAlt: 'Foto de perfil',
     description: 'Estudiando desarrollar web e ingles, amante de la programación, la tecnología y los idiomas, entusiasmado de seguir aprendiendo y nunca parar de aprender.',
     tagWork: 'Disponible',
-    tagBirthday: 'Abril 27',
+    tagBirthday: '27 Abril',
     anchorProjects: 'Proyectos',
     anchorSkills: 'Habilidades',
     anchorAboutMe: 'Sobre mí',

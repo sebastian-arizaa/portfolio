@@ -10,10 +10,10 @@ export function Footer() {
           <a href="https://github.com/sebastian-arizaa" target="_blank"><FaGithub className='w-6 h-6'/></a>
         </li>
         <li>
-          <a href="mailto:sebadia1333@gmail.com"><SiGmail className='w-6 h-6'/></a>
+          <a href="mailto:sebadia1333@gmail.com" target="_blank"><SiGmail className='w-6 h-6'/></a>
         </li>
         <li>
-          <a href="https://x.com/Sebas_00018"><FaXTwitter className='w-6 h-6'/></a>
+          <a href="https://x.com/Sebas_00018" target="_blank"><FaXTwitter className='w-6 h-6'/></a>
         </li>
       </ul>
       <p className='text-center'>Sebastian Ariza Diaz © 2025</p>
