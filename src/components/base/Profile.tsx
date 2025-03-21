@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { LanguageContext } from '../../context/contexts';
+import { LanguageContext, PageContext } from '../../context/contexts';
 import { Tag } from './Tag'
 import { Anchor } from './Anchor';
 import { MdWork } from 'react-icons/md';
@@ -9,12 +9,23 @@ import { FaCity } from 'react-icons/fa';
 
 export function Profile() {
   const {language} = useContext(LanguageContext)
+  const {setPage} = useContext(PageContext)
   const [anchorSelected, setAnchorSelected] = useState('')
 
   const handleAnchorSelected = (value?: string) => {
-    if(text[language].anchorProjects == value) setAnchorSelected(value)
-    if(text[language].anchorSkills == value) setAnchorSelected(value)
-    if(text[language].anchorAboutMe == value) setAnchorSelected(value)
+    if(!setPage) return 
+    if(text[language].anchorProjects == value) {
+      setPage('projects')
+      setAnchorSelected(value)
+    }
+    if(text[language].anchorSkills == value) {
+      setPage('skills')
+      setAnchorSelected(value)
+    }
+    if(text[language].anchorAboutMe == value) {
+      setPage('about me')
+      setAnchorSelected(value)
+    }
   }
 
   const isAnchorActive = (value: string) => {
@@ -22,13 +33,15 @@ export function Profile() {
     return false
   }
   const bannerImage = 'https://www.armadilloamarillo.com/wp-content/uploads/fondo-de-programacion-web_ok.jpg'
-  
+  // const bannerImage = '../../assets/profileBanner.jpg'
+  const putBanner = false
+
   return (
     <div className="flex flex-col items-center">
-      <div className={`w-[120%] h-64 ${bannerImage ? `bg-[url(${bannerImage})]` : 'bg-secondary'} bg-cover`}></div>
+      <div className={`w-[120%] h-64 ${putBanner ? `bg-[url(${bannerImage})]` : 'bg-secondary'} bg-cover`}></div>
       <div className="relative h-24 flex w-full">
         <figure className="absolute -translate-y-1/2 h-48 w-48 rounded-full overflow-hidden max-sm:h-36 max-sm:w-36">
-          <img alt={text[language].profilePhotoAlt} className="w-full h-full bg-secondary"/>
+          <img alt={text[language].profilePhotoAlt} className="w-full h-full bg-secondary-hover"/>
         </figure>
       </div>
       <div className=" flex flex-col w-full gap-2">

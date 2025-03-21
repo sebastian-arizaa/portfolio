@@ -1,7 +1,7 @@
 import React from 'react'
 
 interface Props {
-  children: React.JSX.Element | React.JSX.Element[] 
+  children: React.JSX.Element | React.JSX.Element[]
 }
 
 export function ContentLayout({children}: Props) {
