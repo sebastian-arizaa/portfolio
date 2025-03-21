@@ -23,7 +23,7 @@ export default function Button({type, content, isActive, styles, iconStyles, Ico
       btnStyles = `text-primary-text bg-primary hover:bg-primary-hover active:bg-primary-focus ${isActive? 'bg-primary-hover!' : ''}`
       break
   }
-  return <button onClick={onClick} className={`w-full flex items-center justify-center rounded-[2px] py-2 px-4 cursor-pointer ${btnStyles} ${styles}`}>
+  return <button onClick={onClick} className={`w-full flex items-center justify-center rounded-xs py-2 px-4 cursor-pointer ${btnStyles} ${styles}`}>
    {Icon && <Icon className={iconStyles}/>}
    {content}
   </button>
