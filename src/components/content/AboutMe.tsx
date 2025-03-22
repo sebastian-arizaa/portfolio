@@ -5,7 +5,7 @@ export function AboutMe() {
   const {language} = useContext(LanguageContext)
 
   return (
-    <div className="flex flex-col p-4 gap-4">
+    <div className="flex flex-col p-4 gap-8">
       <div className="flex flex-col gap-2">
         <span className="text-lg font-semibold">{text[language].firstTitle}</span>
         <p>{text[language].firstParagraph}</p>
