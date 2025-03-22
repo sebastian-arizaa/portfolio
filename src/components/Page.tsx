@@ -7,7 +7,6 @@ import { useContext } from 'react'
 import { Projects } from './content/Projects'
 import { AboutMe } from './content/AboutMe'
 import { Skills } from './content/Skills'
-import Button from './base/Button'
 import { PageContext } from '../context/contexts'
 
 export function Page() {
