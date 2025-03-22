@@ -2,71 +2,22 @@ import { useContext } from 'react';
 import { ProjectType } from '../../types';
 import { Project } from '../base/Project';
 import { LanguageContext } from '../../context/contexts';
+import proyectoSenaImgSG from '../../assets/proyectoSenaImgG.png'
+import proyectoSenaImgSG1 from '../../assets/proyectoSenaImgG1.png'
 
 export function Projects() {
   const {language} = useContext(LanguageContext)
-
+  const proyectoSenaImg = window.outerWidth > 500 ? proyectoSenaImgSG : proyectoSenaImgSG1
+  console.log('🚀 ~ Projects ~ proyectoSenaImg:', proyectoSenaImg)
   const projects: ProjectType[] = [
     {
-      title: 'ToDo',
-      url: 'https://www.youtube.com/watch?v=BtLSaxRnIhc&ab_channel=Linwi',
-      description:  text[language].proyects.todo.description,
-      image: 'https://s3-alpha.figma.com/hub/file/4283443689/9579f94c-65c0-4fd1-a9d0-6196df52a4bc-cover.png',
-      tags: [
-        {
-          text: 'HTML',
-          color: 'bg-red-300'
-        },
-        {
-          text: 'CSS',
-          color: 'bg-blue-300'
-        },
-        {
-          text: 'JavaScript',
-          color: 'bg-yellow-300'
-        }
-      ]
+      title: text[language].proyects.proyectoSena.title,
+      url: 'https://proyectosena-production.up.railway.app/#/formacion',
+      githubUrl: 'https://github.com/sebastian-arizaa/portfolio',
+      description:  text[language].proyects.proyectoSena.description,
+      image: proyectoSenaImg,
+      tags: ['react', 'tailwindcss', 'typescript', 'mysql']
     },
-    {
-      title: 'Supermarket System',
-      url: 'https://www.youtube.com/watch?v=BtLSaxRnIhc&ab_channel=Linwi',
-      description:  text[language].proyects.todo.description,
-      image:'https://repository-images.githubusercontent.com/373628278/e6aebf10-a376-4097-891a-a4df2f85cf03',
-      tags: [
-        {
-          text: 'React',
-          color: 'bg-blue-200'
-        },
-        {
-          text: 'TawildCSS',
-          color: 'bg-blue-300'
-        },
-        {
-          text: 'TypeScripts',
-          color: 'bg-blue-200'
-        }
-      ]
-    },
-    {
-      title: 'Supermarket System',
-      url: 'https://www.youtube.com/watch?v=BtLSaxRnIhc&ab_channel=Linwi',
-      description:  text[language].proyects.todo.description,
-      image: 'https://user-images.githubusercontent.com/61280281/99399723-0b3fa980-290c-11eb-8728-03d974be548d.png',
-      tags: [
-        {
-          text: 'React',
-          color: 'bg-blue-200'
-        },
-        {
-          text: 'TawildCSS',
-          color: 'bg-blue-300'
-        },
-        {
-          text: 'TypeScripts',
-          color: 'bg-blue-200'
-        }
-      ]
-    }
   ]
 
   return (
@@ -75,6 +26,7 @@ export function Projects() {
         key={index}
         title={project.title}
         url={project.url}
+        githubUrl={project.githubUrl}
         description={project.description}
         image={project.image}
         tags={project.tags}
@@ -83,20 +35,20 @@ export function Projects() {
   )
 }
 
-
-
 const text = {
   spanish: {
     proyects: {
-      todo: {
-        description: 'Crea cual quier cosas que quires es intereansate'
+      proyectoSena: {
+        title: 'Administrador de Aprendices',
+        description: 'Administra los aprendices de Colombia, crea formaciones, aprendices y administradores estos ultimos gestionaran los aprendices y las formaciones creadas.'
       }
     }
   },
   english: {
     proyects: {
-      todo: {
-        description: 'Creates numerous things bla bla'
+      proyectoSena: {
+        title: 'Apprentice Administrator',
+        description: 'Manage Apprentices in Colombia, Make courses, apprentices and administrators who will manage the apprentices and the courses created.'
       }
     }
   }

@@ -4,7 +4,7 @@ import Button from './Button'
 import { MdLightMode } from 'react-icons/md';
 import { MdDarkMode } from 'react-icons/md';
 import { LuLanguages } from 'react-icons/lu';
-import { Theme } from '../../types';
+import { Language, Theme } from '../../types';
 
 export function Navbar() {
   const {language, setLanguage} = useContext(LanguageContext)
@@ -17,6 +17,13 @@ export function Navbar() {
     if(theme == 'light') setTheme('dark')
     if(theme == 'dark') setTheme('light')
     document.children[0].classList.toggle('dark')
+  }
+
+  const handleToggleLanguage = (value: Language) => {
+    if(!setLanguage) return 
+    if(language == value) return
+    setLanguage(value)
+    setIsSelectingLanguage(false)
   }
 
   return (
@@ -36,7 +43,7 @@ export function Navbar() {
             <Button
               styles='dark:bg-primary/30! dark:hover:bg-primary/40! dark:text-white max-sm:dark:bg-dark-third! max-sm:dark:hover:bg-dark-third-hover!' 
               isActive={language == 'spanish' ? true : false} 
-              onClick={()=> setLanguage && setLanguage('spanish')} 
+              onClick={()=> handleToggleLanguage('spanish')} 
               content={text[language].btnSpanishLanguage}
               type='secondary'
             />
@@ -45,7 +52,7 @@ export function Navbar() {
             <Button 
               styles='dark:bg-primary/30! dark:hover:bg-primary/40! dark:text-white max-sm:dark:bg-dark-third! max-sm:dark:hover:bg-dark-third-hover!' 
               isActive={language == 'english' ? true : false} 
-              onClick={()=> setLanguage && setLanguage('english')} 
+              onClick={()=> handleToggleLanguage('english')} 
               content={text[language].btnEnglishLanguage}
               type='secondary'
             />
