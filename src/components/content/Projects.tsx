@@ -2,71 +2,28 @@ import { useContext } from 'react';
 import { ProjectType } from '../../types';
 import { Project } from '../base/Project';
 import { LanguageContext } from '../../context/contexts';
+import proyectoSenaImgLg from '../../assets/proyectoSenaImgLg.png'
+import typingImg from '../../assets/typingImg.png'
 
 export function Projects() {
   const {language} = useContext(LanguageContext)
-
   const projects: ProjectType[] = [
     {
-      title: 'ToDo',
-      url: 'https://www.youtube.com/watch?v=BtLSaxRnIhc&ab_channel=Linwi',
-      description:  text[language].proyects.todo.description,
-      image: 'https://s3-alpha.figma.com/hub/file/4283443689/9579f94c-65c0-4fd1-a9d0-6196df52a4bc-cover.png',
-      tags: [
-        {
-          text: 'HTML',
-          color: 'bg-red-300'
-        },
-        {
-          text: 'CSS',
-          color: 'bg-blue-300'
-        },
-        {
-          text: 'JavaScript',
-          color: 'bg-yellow-300'
-        }
-      ]
+      title: text[language].proyects.proyectoSena.title,
+      url: 'https://proyectosena-production.up.railway.app/#/formacion',
+      githubUrl: 'https://github.com/sebastian-arizaa/portfolio',
+      description:  text[language].proyects.proyectoSena.description,
+      image: proyectoSenaImgLg,
+      tags: ['react', 'tailwindcss', 'typescript', 'mysql']
     },
     {
-      title: 'Supermarket System',
-      url: 'https://www.youtube.com/watch?v=BtLSaxRnIhc&ab_channel=Linwi',
-      description:  text[language].proyects.todo.description,
-      image:'https://repository-images.githubusercontent.com/373628278/e6aebf10-a376-4097-891a-a4df2f85cf03',
-      tags: [
-        {
-          text: 'React',
-          color: 'bg-blue-200'
-        },
-        {
-          text: 'TawildCSS',
-          color: 'bg-blue-300'
-        },
-        {
-          text: 'TypeScripts',
-          color: 'bg-blue-200'
-        }
-      ]
+      title: text[language].proyects.typing.title,
+      url: 'https://sebastian-arizaa.github.io/typing/',
+      githubUrl: 'https://github.com/sebastian-arizaa/typing',
+      description:  text[language].proyects.typing.description,
+      image: typingImg,
+      tags: ['react', 'tailwindcss', 'typescript']
     },
-    {
-      title: 'Supermarket System',
-      url: 'https://www.youtube.com/watch?v=BtLSaxRnIhc&ab_channel=Linwi',
-      description:  text[language].proyects.todo.description,
-      image: 'https://user-images.githubusercontent.com/61280281/99399723-0b3fa980-290c-11eb-8728-03d974be548d.png',
-      tags: [
-        {
-          text: 'React',
-          color: 'bg-blue-200'
-        },
-        {
-          text: 'TawildCSS',
-          color: 'bg-blue-300'
-        },
-        {
-          text: 'TypeScripts',
-          color: 'bg-blue-200'
-        }
-      ]
-    }
   ]
 
   return (
@@ -75,6 +32,7 @@ export function Projects() {
         key={index}
         title={project.title}
         url={project.url}
+        githubUrl={project.githubUrl}
         description={project.description}
         image={project.image}
         tags={project.tags}
@@ -83,20 +41,28 @@ export function Projects() {
   )
 }
 
-
-
 const text = {
   spanish: {
     proyects: {
-      todo: {
-        description: 'Crea cual quier cosas que quires es intereansate'
+      proyectoSena: {
+        title: 'Administrador de Aprendices',
+        description: 'Administra los aprendices de Colombia, crea formaciones en diferentes areas del pais y asignale sus respectivos aprendices.'
+      },
+      typing: {
+        title: 'Typing',
+        description: 'Practica tus habilidades de Typing con la serie de niveles que hay disponibles.'
       }
     }
   },
   english: {
     proyects: {
-      todo: {
-        description: 'Creates numerous things bla bla'
+      proyectoSena: {
+        title: 'Apprentice Administrator',
+        description: 'Manage Apprentices in Colombia, Make courses in diferent areas of the country and assign their respective apprentices'
+      },
+      typing: {
+        title: 'Typing',
+        description: 'Practice your typing skills with a set of available levels.'
       }
     }
   }
