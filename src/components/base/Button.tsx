@@ -17,13 +17,13 @@ export default function Button({type, content, isActive, styles, iconStyles, Ico
       btnStyles = `text-primary-text bg-secondary hover:bg-secondary-hover active:bg-secondary-focus ${isActive? 'bg-secondary-hover!' : ''}`
       break
     case 'secondary':
-      btnStyles = `text-primary-text bg-third hover:bg-third-hover active:bg-third-focus ${isActive? 'bg-third-hover! dark:bg-third-hover/10!' : ''}`
+          btnStyles = `text-primary-text bg-third hover:bg-third-hover active:bg-third-focus ${isActive? 'bg-third-hover! hover:bg-third-hover! dark:bg-third-hover/10! dark:hover:bg-third-hover/10!  max-sm:dark:bg-dark-third-hover!  max-sm:dark:hover:bg-dark-third-hover!' : ''}`
       break
     case 'third':
       btnStyles = `text-primary-text bg-primary hover:bg-primary-hover active:bg-primary-focus ${isActive? 'bg-primary-hover!' : ''}`
       break
   }
-  return <button onClick={onClick} className={`w-full flex items-center justify-center rounded-xs py-2 px-4 cursor-pointer ${btnStyles} ${styles}`}>
+  return <button onClick={onClick} className={`w-full flex items-center justify-center rounded-xs py-2 px-4 cursor-pointer  ${btnStyles} ${styles}`}>
    {Icon && <Icon className={iconStyles}/>}
    {content}
   </button>

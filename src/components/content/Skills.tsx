@@ -30,7 +30,7 @@ export function Skills() {
 
 const text = {
   spanish: {
-    firstTitle: 'Lenguajes de programacion',
+    firstTitle: 'Lenguajes de programación',
     secondTitle: 'Herramientas',
     thirdTitle: 'Idiomas',
     languageSkill: 'Ingles B1'

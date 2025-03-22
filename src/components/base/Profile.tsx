@@ -6,6 +6,8 @@ import { MdWork } from 'react-icons/md';
 import { FaBirthdayCake } from 'react-icons/fa';
 import { FaFlag } from 'react-icons/fa';
 import { FaCity } from 'react-icons/fa';
+import profilePhoto from '../../assets/profilePhoto.jpg'
+import profileBanner from '../../assets/profileBanner.jpg'
 
 export function Profile() {
   const {language} = useContext(LanguageContext)
@@ -33,16 +35,15 @@ export function Profile() {
     }
   }
 
-  const bannerImage = 'https://www.armadilloamarillo.com/wp-content/uploads/fondo-de-programacion-web_ok.jpg'
-  // const bannerImage = '../../assets/profileBanner.jpg'
   const putBanner = false
-
   return (
     <div className="flex flex-col items-center">
-      <div className={`w-[120%] max-sm:w-full h-64 max-sm:h-44 ${putBanner ? `bg-[url(${bannerImage})]` : 'bg-secondary'} bg-cover`}></div>
+      <div className={`w-[120%] max-sm:w-full h-64 max-sm:h-44 rounded-xs ${!putBanner ? 'bg-secondary' : ''} bg-cover`}>
+        {putBanner && <img src={profileBanner} alt="banner" className='w-full h-full'/>}
+      </div>
       <div className="relative h-24 flex w-full max-sm:px-4">
         <figure className="absolute -translate-y-1/2 h-48 w-48 rounded-full overflow-hidden max-sm:h-36 max-sm:w-36 border-4 border-primary dark:border-dark-primary">
-          <img src='src\assets\profilePhoto.jpeg' alt={text[language].profilePhotoAlt} className="w-full h-full bg-secondary-hover object-cover"/>
+          <img src={profilePhoto} alt={text[language].profilePhotoAlt} className="w-full h-full bg-secondary-hover object-cover"/>
         </figure>
       </div>
       <div className="flex flex-col w-full gap-2  max-sm:px-4">

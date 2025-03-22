@@ -9,6 +9,7 @@ export function Projects() {
   const projects: ProjectType[] = [
     {
       title: 'ToDo',
+      url: 'https://www.youtube.com/watch?v=BtLSaxRnIhc&ab_channel=Linwi',
       description:  text[language].proyects.todo.description,
       image: 'https://s3-alpha.figma.com/hub/file/4283443689/9579f94c-65c0-4fd1-a9d0-6196df52a4bc-cover.png',
       tags: [
@@ -28,6 +29,7 @@ export function Projects() {
     },
     {
       title: 'Supermarket System',
+      url: 'https://www.youtube.com/watch?v=BtLSaxRnIhc&ab_channel=Linwi',
       description:  text[language].proyects.todo.description,
       image:'https://repository-images.githubusercontent.com/373628278/e6aebf10-a376-4097-891a-a4df2f85cf03',
       tags: [
@@ -47,6 +49,7 @@ export function Projects() {
     },
     {
       title: 'Supermarket System',
+      url: 'https://www.youtube.com/watch?v=BtLSaxRnIhc&ab_channel=Linwi',
       description:  text[language].proyects.todo.description,
       image: 'https://user-images.githubusercontent.com/61280281/99399723-0b3fa980-290c-11eb-8728-03d974be548d.png',
       tags: [
@@ -71,6 +74,7 @@ export function Projects() {
       {projects.map((project, index) => <Project
         key={index}
         title={project.title}
+        url={project.url}
         description={project.description}
         image={project.image}
         tags={project.tags}

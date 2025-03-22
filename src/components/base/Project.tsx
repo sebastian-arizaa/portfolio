@@ -1,10 +1,14 @@
 import { ProjectType } from '../../types'
 
-type Props = ProjectType 
+type Props = ProjectType
 
-export function Project({title, description, image, tags}: Props) {
+export function Project({title, description, image, tags, url}: Props) {
+  const handleUrlProject = () => {
+    window.open(url, '_blank')
+  }
+
   return (
-    <div className='flex flex-col gap-2 p-4 rounded-xs cursor-pointer hover:bg-primary-hover dark:hover:bg-primary/20'>
+    <div onClick={handleUrlProject} className='flex flex-col gap-2 p-4 rounded-xs cursor-pointer hover:bg-primary-hover dark:hover:bg-primary/20'>
       <p className="text-lg font-semibold dark:text-dark-primary-text">{title}</p>
       <p className='dark:text-dark-primary-text'>{description}</p>
       <figure className="w-full h-69 rounded-xs overflow-hidden bg-teal-500 shadow-sm">

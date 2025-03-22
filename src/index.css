@@ -40,7 +40,6 @@ a, button {
   --color-primary-text: black;
   --color-secondary-text: white;
 
-
   --color-dark-primary: oklch(0.205 0 0);
   --color-dark-primary-hover: oklch(0.147 0.004 49.25);
   --color-dark-primary-focus: oklch(0.216 0.006 56.043);
@@ -49,9 +48,9 @@ a, button {
   --color-dark-secondary-hover: oklch(0.828 0.111 230.318);
   --color-dark-secondary-focus: oklch(0.901 0.058 230.902);
 
-  --color-dark-third: oklch(0.928 0.006 264.531);
-  --color-dark-third-hover:oklch(0.872 0.01 258.338);
-  --color-dark-third-focus:oklch(0.928 0.006 264.531);
+  --color-dark-third: oklch(0.708 0 0);
+  --color-dark-third-hover: oklch(0.556 0 0);
+  --color-dark-third-focus: oklch(0.708 0 0);
 
   --color-dark-primary-text: white;
   --color-dark-secondary-text: black;

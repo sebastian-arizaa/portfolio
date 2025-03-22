@@ -11,5 +11,6 @@ export type ProjectType = {
   title?: string,
   description?: string,
   image?: string,
-  tags?: ProjectTag[]
+  tags?: ProjectTag[],
+  url?: string
 }

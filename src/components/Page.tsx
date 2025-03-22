@@ -11,7 +11,6 @@ import { PageContext } from '../context/contexts'
 
 export function Page() {
   const {page} = useContext(PageContext)
-  console.log('🚀 ~ Page ~ page:', page)
 
   const renderPage = () => {
     if(page == 'projects') return <Projects/>
