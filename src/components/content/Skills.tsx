@@ -1,5 +1,7 @@
 import { useContext } from 'react'
 import { LanguageContext } from '../../context/contexts'
+import { Skill } from '../../types'
+import SkillTag from '../base/SkillTag'
 
 export function Skills() {
   const {language} = useContext(LanguageContext)
@@ -9,19 +11,19 @@ export function Skills() {
       <div className="flex flex-col gap-2">
         <span className="text-lg font-semibold dark:text-dark-primary-text">{text[language].firstTitle}</span>
         <div className='flex flex-wrap gap-4'>
-          {programmingLanguages.map((pl, index) => <span key={index} className={`px-4 py-1 rounded-xs select-none ${pl.color}`}>{pl.text}</span>)}
+          {programmingLanguages.map((pl, index) => <SkillTag key={index} type={pl}/>)}
         </div>
       </div>
       <div className="flex flex-col gap-2">
         <span className="text-lg font-semibold dark:text-dark-primary-text">{text[language].secondTitle}</span>
         <div className='flex flex-wrap gap-4'>
-          {programmingTools.map((pl, index) => <span key={index} className={`px-4 py-1 rounded-xs select-none ${pl.color}`}>{pl.text}</span>)}
+          {programmingTools.map((pt, index) => <SkillTag key={index} type={pt}/>)}
         </div>
       </div>
       <div className="flex flex-col gap-2">
         <span className="text-lg font-semibold dark:text-dark-primary-text">{text[language].thirdTitle}</span>
         <div className='flex flex-wrap gap-4'>
-          <span className='px-4 py-1 rounded-xs bg-red-300 select-none '>{text[language].languageSkill}</span>
+          <SkillTag type='inglesb1' content={text[language].languageSkill}/>
         </div>
       </div>
     </div>
@@ -43,48 +45,6 @@ const text = {
   }
 }
 
-const programmingLanguages = [
-  {
-    text: 'HTML',
-    color: 'bg-red-300' 
-  },
-  {
-    text: 'CSS',
-    color: 'bg-blue-300' 
-  },
-  {
-    text: 'TailwindCSS',
-    color: 'bg-blue-300' 
-  },
-  {
-    text: 'JavaScript',
-    color: 'bg-yellow-200' 
-  },
-  {
-    text: 'TypeScript',
-    color: 'bg-blue-200' 
-  },
-  {
-    text: 'React',
-    color: 'bg-cyan-200' 
-  },
-  {
-    text: 'MySQL',
-    color: 'bg-stone-200' 
-  },
-]
+const programmingLanguages: Skill[] = ['html', 'css', 'tailwindcss', 'javascript', 'typescript', 'react',  'nodejs', 'mysql']
 
-const programmingTools = [
-  {
-    text: 'Git',
-    color: 'bg-red-400' 
-  },
-  {
-    text: 'GitHub',
-    color: 'bg-stone-400' 
-  },
-  {
-    text: 'VS Code',
-    color: 'bg-blue-300' 
-  }
-]
+const programmingTools: Skill[] = ['git', 'github', 'vscode']

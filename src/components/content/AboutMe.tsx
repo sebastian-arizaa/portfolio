@@ -35,7 +35,7 @@ export function AboutMe() {
 const text = {
   spanish: {
     firstTitle: 'General',
-    firstParagraph: 'Hola👋, Soy Sebastián Ariza Diaz, soy de Colombia tengo 19 años he estado estudiando el desarrollo web e ingles por mas de un año. Mis motivos para adentrarme en el mundo de la programación fueron la posibilidad de solucionar problemas y automatizar tareas con código.',
+    firstParagraph: 'Hola👋, Soy Sebastián Ariza Diaz, soy de Colombia tengo 20 años he estado estudiando el desarrollo web e ingles por mas de un año. Mis motivos para adentrarme en el mundo de la programación fueron la posibilidad de solucionar problemas y automatizar tareas con código.',
     secondParagraph: 'Aspiro a poder adentrarme en el mundo laboral de la programación, ganar experiencia y conocimientos.',
     secondTitle: 'Educación',
     firstItem: 'Bachiller Técnico Especialidad Informática',
@@ -45,7 +45,7 @@ const text = {
   },
   english: {
     firstTitle: 'General',
-    firstParagraph: 'Hello👋, I\'m Sebastián Ariza Diaz I am from Colombia, I\'m 19 years old I have been studying sofware development and english for over a year. My reason for getting into programmaming world was the posibility of resolving problems and automate tasks with code.',
+    firstParagraph: 'Hello👋, I\'m Sebastián Ariza Diaz I am from Colombia, I\'m 20 years old I have been studying sofware development and english for over a year. My reason for getting into programmaming world was the posibility of resolving problems and automate tasks with code.',
     secondParagraph: 'My goal is to enter the working world of programming and gain experience and knowledge.',
     secondTitle: 'Education',
     firstItem: 'Technical Bachelor\'s Degree Specializing in computing',
