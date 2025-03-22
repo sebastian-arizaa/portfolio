@@ -1,6 +1,6 @@
 import { FaGithub } from 'react-icons/fa';
 import { SiGmail } from 'react-icons/si';
-import { FaXTwitter } from 'react-icons/fa6';
+import { FaLinkedinIn } from 'react-icons/fa';
 
 export function Footer() {
   return (
@@ -12,7 +12,6 @@ export function Footer() {
          </li>
         ))}
       </ul>
-      <p className='text-center dark:text-dark-primary-text'>Sebastian Ariza Diaz © 2025</p>
     </div>
   )
 }
@@ -27,7 +26,7 @@ const socialLinks = [
     Icon: SiGmail
   },
   {
-    href: 'https://x.com/Sebas_00018',
-    Icon: FaXTwitter
+    href: 'https://www.linkedin.com/in/sebasti%C3%A1n-ariza-diaz-2299a1266/',
+    Icon: FaLinkedinIn
   } 
 ]

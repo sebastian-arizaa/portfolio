@@ -12,7 +12,7 @@ import profileBanner from '../../assets/profileBanner.jpg'
 export function Profile() {
   const {language} = useContext(LanguageContext)
   const {setPage} = useContext(PageContext)
-  const [anchorProjectIsSelected, setAnchorProjectIsSelect] = useState(false)
+  const [anchorProjectIsSelected, setAnchorProjectIsSelect] = useState(true)
   const [anchorSkillIsSelected, setAnchorSkillIsSelect] = useState(false)
   const [anchorAboutMeIsSelected, setAnchorAboutMeIsSelect] = useState(false)
 
@@ -35,11 +35,11 @@ export function Profile() {
     }
   }
 
-  const putBanner = false
+  const putBanner = !false
   return (
     <div className="flex flex-col items-center">
       <div className={`w-[120%] max-sm:w-full h-64 max-sm:h-44 rounded-xs ${!putBanner ? 'bg-secondary' : ''} bg-cover`}>
-        {putBanner && <img src={profileBanner} alt="banner" className='w-full h-full'/>}
+        {putBanner && <img src={profileBanner} alt="banner" className='w-full h-full object-cover'/>}
       </div>
       <div className="relative h-24 flex w-full max-sm:px-4">
         <figure className="absolute -translate-y-1/2 h-48 w-48 rounded-full overflow-hidden max-sm:h-36 max-sm:w-36 border-4 border-primary dark:border-dark-primary">
@@ -80,7 +80,7 @@ export function Profile() {
 const text = {
   spanish: {
     profilePhotoAlt: 'Foto de perfil',
-    description: 'Estudiando desarrollar web e ingles, amante de la programación, la tecnología y los idiomas, entusiasmado de seguir aprendiendo y nunca parar de aprender.',
+    description: 'Técnico en Programación de Software (SENA) con enfoque en desarrollo Web Full Stack y optimización de flujos de trabajo. Experiencia en el sector financiero (Fiduciaria Bancolombia). Busco aportar mi capacidad lógica y técnica en roles de desarrollo de software o análisis operativo digital.',
     tagWork: 'Disponible',
     tagBirthday: '27 Abril',
     anchorProjects: 'Proyectos',
@@ -89,7 +89,7 @@ const text = {
   },
   english: {
     profilePhotoAlt: 'Profile photo',
-    description: 'Studying web development and english, a lover of programming, technology, and languages, eager to continue learning and never stop learning',
+    description: 'Software Programming Technician (SENA) focused on Full Stack Web development and workflow optimization. Experience in the financial sector (Fiduciaria Bancolombia). Seeking to contribute my logical and technical capabilities in software development or digital operations analysis roles.',
     tagWork: 'Available',
     tagBirthday: 'April 27th',
     anchorProjects: 'Projects',

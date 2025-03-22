@@ -1,90 +1,38 @@
 import { useContext } from 'react'
 import { LanguageContext } from '../../context/contexts'
+import { Skill } from '../../types'
+import SkillTag from '../base/SkillTag'
 
 export function Skills() {
   const {language} = useContext(LanguageContext)
 
   return (
     <div className="flex flex-col p-4 gap-8">
-      <div className="flex flex-col gap-2">
-        <span className="text-lg font-semibold dark:text-dark-primary-text">{text[language].firstTitle}</span>
-        <div className='flex flex-wrap gap-4'>
-          {programmingLanguages.map((pl, index) => <span key={index} className={`px-4 py-1 rounded-xs select-none ${pl.color}`}>{pl.text}</span>)}
+      {text[language].map((item, index) => (
+        <div key={index} className="flex flex-col gap-2">
+          <span className="text-lg font-semibold dark:text-dark-primary-text">{item.title}</span>
+          <div className='flex flex-wrap gap-4'>
+            {item.skills.map((skill, skillIndex) => (<SkillTag key={skillIndex} type={skill}/>))}
+          </div>
         </div>
-      </div>
-      <div className="flex flex-col gap-2">
-        <span className="text-lg font-semibold dark:text-dark-primary-text">{text[language].secondTitle}</span>
-        <div className='flex flex-wrap gap-4'>
-          {programmingTools.map((pl, index) => <span key={index} className={`px-4 py-1 rounded-xs select-none ${pl.color}`}>{pl.text}</span>)}
-        </div>
-      </div>
-      <div className="flex flex-col gap-2">
-        <span className="text-lg font-semibold dark:text-dark-primary-text">{text[language].thirdTitle}</span>
-        <div className='flex flex-wrap gap-4'>
-          <span className='px-4 py-1 rounded-xs bg-red-300 select-none '>{text[language].languageSkill}</span>
-        </div>
-      </div>
+      ))}
     </div>
   )
 }
 
-const text = {
-  spanish: {
-    firstTitle: 'Lenguajes de programación',
-    secondTitle: 'Herramientas',
-    thirdTitle: 'Idiomas',
-    languageSkill: 'Ingles B1'
-  },
-  english: {
-    firstTitle: 'Code Languages',
-    secondTitle: 'Tools',
-    thirdTitle: 'Languages',
-    languageSkill: 'English B1'
-  }
+const text: {spanish: {title: string, skills: Skill[]}[], english: {title: string, skills: Skill[]}[]} = {
+  spanish: [
+    {title: 'Lenguajes & Frontend', skills: ['JavaScript', 'TypeScript', 'React', 'Tailwind CSS', 'HTML5', 'CSS3']},
+    {title: 'Backend & Bases de Datos', skills: ['Node JS', 'MySQL', 'APIs REST']},
+    {title: 'Herramientas & DevOps', skills: ['Git', 'Github', 'VS Code']},
+    {title: 'Idiomas', skills: ['Español Nativo', 'Ingles B2']},
+    {title: 'Herramientas Ofimaticas', skills: ['Word', 'Excel', 'PowerPoint']}
+  ],
+  english: [
+    {title: 'Languages & Frontend', skills: ['JavaScript', 'TypeScript', 'React', 'Tailwind CSS', 'HTML5', 'CSS3']},
+    {title: 'Backend & Databases', skills: ['Node JS', 'MySQL', 'APIs REST']},
+    {title: 'Tools & DevOps', skills: ['Git', 'Github', 'VS Code']},
+    {title: 'Languages', skills: ['Native Spanish', 'English B2']},
+    {title: 'Office Tools', skills: ['Word', 'Excel', 'PowerPoint']}
+  ]
 }
-
-const programmingLanguages = [
-  {
-    text: 'HTML',
-    color: 'bg-red-300' 
-  },
-  {
-    text: 'CSS',
-    color: 'bg-blue-300' 
-  },
-  {
-    text: 'TailwindCSS',
-    color: 'bg-blue-300' 
-  },
-  {
-    text: 'JavaScript',
-    color: 'bg-yellow-200' 
-  },
-  {
-    text: 'TypeScript',
-    color: 'bg-blue-200' 
-  },
-  {
-    text: 'React',
-    color: 'bg-cyan-200' 
-  },
-  {
-    text: 'MySQL',
-    color: 'bg-stone-200' 
-  },
-]
-
-const programmingTools = [
-  {
-    text: 'Git',
-    color: 'bg-red-400' 
-  },
-  {
-    text: 'GitHub',
-    color: 'bg-stone-400' 
-  },
-  {
-    text: 'VS Code',
-    color: 'bg-blue-300' 
-  }
-]
