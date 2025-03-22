@@ -12,7 +12,7 @@ import profileBanner from '../../assets/profileBanner.jpg'
 export function Profile() {
   const {language} = useContext(LanguageContext)
   const {setPage} = useContext(PageContext)
-  const [anchorProjectIsSelected, setAnchorProjectIsSelect] = useState(false)
+  const [anchorProjectIsSelected, setAnchorProjectIsSelect] = useState(true)
   const [anchorSkillIsSelected, setAnchorSkillIsSelect] = useState(false)
   const [anchorAboutMeIsSelected, setAnchorAboutMeIsSelect] = useState(false)
 
