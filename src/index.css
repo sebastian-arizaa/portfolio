@@ -1,12 +1,65 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  font-size: 1.05rem;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+::selection {
+  background-color: var(--color-secondary);
+}
+
+a, button {
+  user-select: none;
+}
+
+@theme {
+  --color-primary: white;
+  --color-primary-hover: oklch(0.928 0.006 264.531);
+  --color-primary-focus: white;
+
+  --color-secondary: oklch(0.901 0.058 230.902);
+  --color-secondary-hover: oklch(0.828 0.111 230.318);
+  --color-secondary-focus: oklch(0.901 0.058 230.902);
+
+  --color-third: oklch(0.928 0.006 264.531);
+  --color-third-hover:oklch(0.872 0.01 258.338);
+  --color-third-focus:oklch(0.928 0.006 264.531);
+
+  --color-primary-text: black;
+  --color-secondary-text: white;
+
+  --color-dark-primary: oklch(0.205 0 0);
+  --color-dark-primary-hover: oklch(0.147 0.004 49.25);
+  --color-dark-primary-focus: oklch(0.216 0.006 56.043);
+
+  --color-dark-secondary: oklch(0.901 0.058 230.902);
+  --color-dark-secondary-hover: oklch(0.828 0.111 230.318);
+  --color-dark-secondary-focus: oklch(0.901 0.058 230.902);
+
+  --color-dark-third: oklch(0.708 0 0);
+  --color-dark-third-hover: oklch(0.556 0 0);
+  --color-dark-third-focus: oklch(0.708 0 0);
+
+  --color-dark-primary-text: white;
+  --color-dark-secondary-text: black;
+
+  --radius-xs: 2px;
+}
+
+@media (max-width: 480px) {
+  :root {
+  font-size: 1rem;
+  }
 }
