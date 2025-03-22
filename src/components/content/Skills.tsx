@@ -7,19 +7,19 @@ export function Skills() {
   return (
     <div className="flex flex-col p-4 gap-8">
       <div className="flex flex-col gap-2">
-        <span className="text-lg font-semibold">{text[language].firstTitle}</span>
+        <span className="text-lg font-semibold dark:text-dark-primary-text">{text[language].firstTitle}</span>
         <div className='flex flex-wrap gap-4'>
           {programmingLanguages.map((pl, index) => <span key={index} className={`px-4 py-1 rounded-xs select-none ${pl.color}`}>{pl.text}</span>)}
         </div>
       </div>
       <div className="flex flex-col gap-2">
-        <span className="text-lg font-semibold">{text[language].secondTitle}</span>
+        <span className="text-lg font-semibold dark:text-dark-primary-text">{text[language].secondTitle}</span>
         <div className='flex flex-wrap gap-4'>
           {programmingTools.map((pl, index) => <span key={index} className={`px-4 py-1 rounded-xs select-none ${pl.color}`}>{pl.text}</span>)}
         </div>
       </div>
       <div className="flex flex-col gap-2">
-        <span className="text-lg font-semibold">{text[language].thirdTitle}</span>
+        <span className="text-lg font-semibold dark:text-dark-primary-text">{text[language].thirdTitle}</span>
         <div className='flex flex-wrap gap-4'>
           <span className='px-4 py-1 rounded-xs bg-red-300 select-none '>{text[language].languageSkill}</span>
         </div>

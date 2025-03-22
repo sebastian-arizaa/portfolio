@@ -1,7 +1,7 @@
 import {IconType} from 'react-icons'
 
 interface Props {
-  type: 'primary' | 'secondary' | 'third' | null,
+  type?: 'primary' | 'secondary' | 'third' | null,
   content?: string,
   isActive?: boolean,
   styles?: string,
@@ -17,7 +17,7 @@ export default function Button({type, content, isActive, styles, iconStyles, Ico
       btnStyles = `text-primary-text bg-secondary hover:bg-secondary-hover active:bg-secondary-focus ${isActive? 'bg-secondary-hover!' : ''}`
       break
     case 'secondary':
-      btnStyles = `text-primary-text bg-third hover:bg-third-hover active:bg-third-focus ${isActive? 'bg-third-hover!' : ''}`
+      btnStyles = `text-primary-text bg-third hover:bg-third-hover active:bg-third-focus ${isActive? 'bg-third-hover! dark:bg-third-hover/10!' : ''}`
       break
     case 'third':
       btnStyles = `text-primary-text bg-primary hover:bg-primary-hover active:bg-primary-focus ${isActive? 'bg-primary-hover!' : ''}`

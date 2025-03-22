@@ -5,7 +5,7 @@ export function AboutMe() {
   const {language} = useContext(LanguageContext)
 
   return (
-    <div className="flex flex-col p-4 gap-8">
+    <div className="flex flex-col p-4 gap-8 dark:text-dark-primary-text">
       <div className="flex flex-col gap-2">
         <span className="text-lg font-semibold">{text[language].firstTitle}</span>
         <p>{text[language].firstParagraph}</p>
@@ -45,8 +45,8 @@ const text = {
   },
   english: {
     firstTitle: 'General',
-    firstParagraph: 'Hello👋, I\'m Sebastián Ariza Diaz I am from Colombia, I\'m 19 years old I have been studying sofware development and english for over a year. My reason for getting into programmaming world was the posibility of resolving problems and automate tasks with code',
-    secondParagraph: 'My goal is to enter the working world of programming and gain experience and knowledge',
+    firstParagraph: 'Hello👋, I\'m Sebastián Ariza Diaz I am from Colombia, I\'m 19 years old I have been studying sofware development and english for over a year. My reason for getting into programmaming world was the posibility of resolving problems and automate tasks with code.',
+    secondParagraph: 'My goal is to enter the working world of programming and gain experience and knowledge.',
     secondTitle: 'Education',
     firstItem: 'Technical Bachelor\'s Degree Specializing in computing',
     SecondItem: 'Programming software Technical (practices need to be defined)',

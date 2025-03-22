@@ -39,16 +39,16 @@ export function Profile() {
 
   return (
     <div className="flex flex-col items-center">
-      <div className={`w-[120%] h-64 ${putBanner ? `bg-[url(${bannerImage})]` : 'bg-secondary'} bg-cover`}></div>
-      <div className="relative h-24 flex w-full">
-        <figure className="absolute -translate-y-1/2 h-48 w-48 rounded-full overflow-hidden max-sm:h-36 max-sm:w-36">
-          <img alt={text[language].profilePhotoAlt} className="w-full h-full bg-secondary-hover"/>
+      <div className={`w-[120%] max-sm:w-full h-64 max-sm:h-44 ${putBanner ? `bg-[url(${bannerImage})]` : 'bg-secondary'} bg-cover`}></div>
+      <div className="relative h-24 flex w-full max-sm:px-4">
+        <figure className="absolute -translate-y-1/2 h-48 w-48 rounded-full overflow-hidden max-sm:h-36 max-sm:w-36 border-4 border-primary dark:border-dark-primary">
+          <img src='src\assets\profilePhoto.jpeg' alt={text[language].profilePhotoAlt} className="w-full h-full bg-secondary-hover object-cover"/>
         </figure>
       </div>
-      <div className=" flex flex-col w-full gap-2">
-        <span className="text-4xl font-bold">Sebastian Ariza</span>
-        <p>{text[language].description}</p>
-        <div className='flex gap-4'>
+      <div className="flex flex-col w-full gap-2  max-sm:px-4">
+        <span className="text-4xl font-bold dark:text-dark-primary-text">Sebastian Ariza</span>
+        <p className='dark:text-dark-primary-text'>{text[language].description}</p>
+        <div className='flex flex-wrap gap-4'>
           <Tag content={text[language].tagWork} Icon={MdWork}/>
           <Tag content='Colombia' Icon={FaFlag}/>
           <Tag content='Bogotá' Icon={FaCity}/>
